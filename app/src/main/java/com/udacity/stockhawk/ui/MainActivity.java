@@ -116,18 +116,22 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         new AddStockDialog().show(getFragmentManager(), "StockDialogFragment");
     }
 
-    void addStock(String symbol) {
-        if (symbol != null && !symbol.isEmpty()) {
+    public void addStock(String symbol, boolean existsSymbol) {
+        if(existsSymbol) {
+            if (symbol != null && !symbol.isEmpty()) {
 
-            if (networkUp()) {
-                swipeRefreshLayout.setRefreshing(true);
-            } else {
-                String message = getString(R.string.toast_stock_added_no_connectivity, symbol);
-                Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+                if (networkUp()) {
+                    swipeRefreshLayout.setRefreshing(true);
+                } else {
+                    String message = getString(R.string.toast_stock_added_no_connectivity, symbol);
+                    Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+                }
+
+                PrefUtils.addStock(this, symbol);
+                QuoteSyncJob.syncImmediately(this);
             }
-
-            PrefUtils.addStock(this, symbol);
-            QuoteSyncJob.syncImmediately(this);
+        }else{
+            Toast.makeText(this, "Symbol not found", Toast.LENGTH_LONG).show();
         }
     }
 

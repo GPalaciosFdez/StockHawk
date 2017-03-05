@@ -7,7 +7,6 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.udacity.stockhawk.R;
+import com.udacity.stockhawk.utilities.CheckSymbolAsync;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -69,9 +69,8 @@ public class AddStockDialog extends DialogFragment {
     private void addStock() {
         Activity parent = getActivity();
         if (parent instanceof MainActivity) {
-            ((MainActivity) parent).addStock(stock.getText().toString());
+            new CheckSymbolAsync((MainActivity) parent).execute(stock.getText().toString());
         }
-        Log.d("addStockDialog", "EXECUTED");
         dismissAllowingStateLoss();
     }
 
