@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stock Hawk</string>
+    <string name="add_stock">Añadir stock nuevo</string>
+    <string name="dialog_add">Añadir</string>
+    <string name="dialog_cancel">Cancelar</string>
+    <string name="dialog_title">Añadir stock</string>
+    <string name="dialog_hint">Introduce símbolo</string>
+    <string name="error_no_network">No hay conexión de red. Se intentará sincronizar cuando halla una red disponible</string>
+    <string name="error_no_stocks">Ningún stock añadido. Toca el botón para añadir.</string>
+    <string name="toast_no_connectivity">Se actualizara cuando haya una red disponible.</string>
+    <string name="toast_stock_added_no_connectivity">Símbolo %s añadido. Se actualizará cuando haya una red disponible.</string>
+    <string name="empty_stocks_list">No hay stocks disponibles.</string>
+    <string name="widget_label">Stocks</string>
+</resources>

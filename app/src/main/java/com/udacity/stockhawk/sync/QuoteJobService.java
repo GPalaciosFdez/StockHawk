@@ -8,6 +8,7 @@ import timber.log.Timber;
 
 public class QuoteJobService extends JobService {
 
+    public static final String ACTION_DATA_UPDATED = "com.udacity.android.stockhawk.app.ACTION_DATA_UPDATED";
 
     @Override
     public boolean onStartJob(JobParameters jobParameters) {

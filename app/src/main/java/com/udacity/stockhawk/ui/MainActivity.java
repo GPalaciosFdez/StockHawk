@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
@@ -38,10 +39,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     RecyclerView stockRecyclerView;
     @SuppressWarnings("WeakerAccess")
     @BindView(R.id.swipe_refresh)
-    SwipeRefreshLayout swipeRefreshLayout;
+    public SwipeRefreshLayout swipeRefreshLayout;
     @SuppressWarnings("WeakerAccess")
     @BindView(R.id.error)
     TextView error;
+
+    public FloatingActionButton floatingActionButton;
+
     private StockAdapter adapter;
 
     @Override
@@ -55,8 +59,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
 
         adapter = new StockAdapter(this, this);
+
         stockRecyclerView.setAdapter(adapter);
         stockRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 

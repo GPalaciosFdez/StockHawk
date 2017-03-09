@@ -1,6 +1,7 @@
 package com.udacity.stockhawk.utilities;
 
 import android.os.AsyncTask;
+import android.view.View;
 
 import com.udacity.stockhawk.ui.MainActivity;
 
@@ -23,6 +24,13 @@ public class CheckSymbolAsync extends AsyncTask<String, Void, Boolean> {
     }
 
     @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        mainActivity.swipeRefreshLayout.setRefreshing(true);
+        mainActivity.floatingActionButton.setVisibility(View.INVISIBLE);
+    }
+
+    @Override
     protected Boolean doInBackground(String... params){
         symbol = params[0];
         Boolean exists = false;
@@ -40,6 +48,8 @@ public class CheckSymbolAsync extends AsyncTask<String, Void, Boolean> {
 
     @Override
     protected void onPostExecute(Boolean aBoolean) {
+        mainActivity.swipeRefreshLayout.setRefreshing(false);
+        mainActivity.floatingActionButton.setVisibility(View.VISIBLE);
         mainActivity.addStock(symbol, aBoolean);
     }
 }

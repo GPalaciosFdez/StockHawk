@@ -3,14 +3,14 @@
 
     <string name="pref_stocks_initialized_key" translatable="false">initialized</string>
 
-    <string name="pref_stocks_key">stocks</string>
+    <string name="pref_stocks_key" translatable="false">stocks</string>
 
 
     <string name="pref_display_mode_key" translatable="false">displayMode</string>
     <string name="pref_display_mode_default" translatable="false">@string/pref_display_mode_percentage_key</string>
 
-    <string name="pref_display_mode_absolute_key">absolute</string>
-    <string name="pref_display_mode_percentage_key">percentage</string>
+    <string name="pref_display_mode_absolute_key" translatable="false">absolute</string>
+    <string name="pref_display_mode_percentage_key" translatable="false">percentage</string>
 
     <string name="default_stocks_yahoo" translatable="false">YHOO</string>
     <string name="default_stocks_apple" translatable="false">AAPL</string>
@@ -35,5 +35,10 @@
 
     <!-- Content description for buttons -->
     <string name="add_stock">Add a new stock</string>
+
+    <!--Empty Stocks Database-->
+    <string name="empty_stocks_list">No stocks available.</string>
+    <string name="widget_label">Stocks</string>
+    <string name="widget_title">Stock Hawk</string>
 
 </resources>
