@@ -12,7 +12,6 @@ public class DetailActivity extends AppCompatActivity {
 
     public String historicPrices;
     public String symbol;
-    private CharUtils charUtils;
 
     public LineChart lineChart;
 
@@ -29,7 +28,7 @@ public class DetailActivity extends AppCompatActivity {
             if(intentThatStartedThisActivity.hasExtra(Intent.EXTRA_TEXT) && intentThatStartedThisActivity.hasExtra(Intent.EXTRA_SHORTCUT_NAME)){
                 historicPrices = intentThatStartedThisActivity.getStringExtra(Intent.EXTRA_TEXT);
                 symbol = intentThatStartedThisActivity.getStringExtra(Intent.EXTRA_SHORTCUT_NAME);
-                charUtils = new CharUtils(this);
+                CharUtils charUtils = new CharUtils(this);
                 charUtils.createChart();
                 lineChart.invalidate();
             }

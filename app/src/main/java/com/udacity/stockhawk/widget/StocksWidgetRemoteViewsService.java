@@ -15,10 +15,6 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-/**
- * Created by GPalacios on 09/03/17.
- */
-
 public class StocksWidgetRemoteViewsService extends RemoteViewsService {
 
 

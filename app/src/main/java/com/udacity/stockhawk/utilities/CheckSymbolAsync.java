@@ -10,9 +10,6 @@ import java.io.IOException;
 import yahoofinance.Stock;
 import yahoofinance.YahooFinance;
 
-/**
- * Created by GPalacios on 05/03/17.
- */
 
 public class CheckSymbolAsync extends AsyncTask<String, Void, Boolean> {
 

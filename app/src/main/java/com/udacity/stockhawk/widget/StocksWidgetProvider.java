@@ -14,9 +14,6 @@ import com.udacity.stockhawk.R;
 import com.udacity.stockhawk.sync.QuoteSyncJob;
 import com.udacity.stockhawk.ui.MainActivity;
 
-/**
- * Created by GPalacios on 08/03/17.
- */
 
 public class StocksWidgetProvider extends AppWidgetProvider{
 

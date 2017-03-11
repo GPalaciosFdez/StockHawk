@@ -17,10 +17,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
-/**
- * Created by GPalacios on 11/03/17.
- */
 
 public class CharUtils {
 
@@ -39,7 +37,7 @@ public class CharUtils {
     }
 
     private void prepareData(){
-        DateFormat df = new SimpleDateFormat("dd/MM/yy");
+        DateFormat df = new SimpleDateFormat("dd/MM/yy", Locale.US);
         Entry entry;
         String[] dateAndValue;
         Date d;
