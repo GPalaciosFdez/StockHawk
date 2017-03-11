@@ -103,7 +103,7 @@ class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHolder> {
 
 
     interface StockAdapterOnClickHandler {
-        void onClick(String symbol);
+        void onClick(String historicPrices, String symbol);
     }
 
     class StockViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -127,8 +127,9 @@ class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHolder> {
         public void onClick(View v) {
             int adapterPosition = getAdapterPosition();
             cursor.moveToPosition(adapterPosition);
-            int symbolColumn = cursor.getColumnIndex(Contract.Quote.COLUMN_SYMBOL);
-            clickHandler.onClick(cursor.getString(symbolColumn));
+            int historicPrices = cursor.getColumnIndex(Contract.Quote.COLUMN_HISTORY);
+            int symbol = cursor.getColumnIndex(Contract.Quote.COLUMN_SYMBOL);
+            clickHandler.onClick(cursor.getString(historicPrices), cursor.getString(symbol));
 
         }
 
